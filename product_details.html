@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Product Details | Velour Empire</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<p style="text-align:center;color:red;font-weight:600;">
+Frontend Demo Only – Backend Disabled
+</p>
+
+<section class="product-detail-section">
+<div class="container">
+
+<div class="product-detail-grid">
+
+<!-- PRODUCT IMAGES -->
+<div class="product-images">
+  <div class="main-image">
+    <img id="mainImg" src="images/products/hoodie1.jpg" alt="Hoodie">
+  </div>
+
+  <div class="thumbnail-images">
+    <img src="images/products/hoodie1.jpg" onclick="changeImage(this)">
+    <img src="images/products/hoodie2.jpg" onclick="changeImage(this)">
+    <img src="images/products/hoodie3.jpg" onclick="changeImage(this)">
+  </div>
+</div>
+
+<!-- PRODUCT INFO -->
+<div class="product-detail-info">
+
+<h1>Premium Hoodie</h1>
+
+<div class="price-detail">
+  <span class="current-price">₹1,999</span>
+</div>
+
+<p class="product-description">
+Premium quality hoodie crafted for modern style and comfort.
+</p>
+
+<button class="add-to-cart" onclick="alert('Frontend demo only')">
+<i class="fas fa-shopping-bag"></i> Add to Cart
+</button>
+
+</div>
+</div>
+</div>
+</section>
+
+<script>
+function changeImage(el) {
+  document.getElementById("mainImg").src = el.src;
+}
+</script>
+
+</body>
+</html>
