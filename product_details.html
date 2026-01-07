@@ -9,7 +9,21 @@
 </head>
 
 <body>
+<header class="navbar glass">
+  <div class="container nav-main">
+    <a href="index.html" class="logo">Velour Empire</a>
 
+    <nav class="nav-menu">
+      <a href="index.html" class="active">Home</a>
+      <a href="collections.html">Collections</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+    </nav>
+  </div>
+</header>
 <p style="text-align:center;color:red;font-weight:600;">
 Frontend Demo Only – Backend Disabled
 </p>
@@ -59,6 +73,18 @@ function changeImage(el) {
   document.getElementById("mainImg").src = el.src;
 }
 </script>
+<script>
+function changeImage(src) {
+    const img = document.getElementById("mainImg");
+    img.classList.add("fade");
 
+    setTimeout(() => {
+        img.src = src;
+        img.classList.remove("fade");
+    }, 200);
+}
+</script>
+<script src="js/main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

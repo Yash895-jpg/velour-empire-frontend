@@ -9,41 +9,63 @@
 </head>
 
 <body>
+  <header class="navbar glass">
+  <div class="container nav-main">
+    <a href="index.html" class="logo">Velour Empire</a>
 
-<p style="text-align:center;color:red;font-weight:600;">
+    <nav class="nav-menu">
+      <a href="index.html" class="active">Home</a>
+      <a href="collections.html">Collections</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+    </nav>
+  </div>
+</header>
+ 
+
+<p style="text-align:center;color:#b8960c;font-weight:600;margin:10px 0;">
   Frontend Demo Only – Backend Disabled
 </p>
 
 <!-- HERO SECTION -->
-<section class="hero-section">
+<section class="hero-section fade-in">
   <div class="hero-content">
+
     <div class="hero-text">
+      <span class="hero-badge">Premium Fashion</span>
       <h1>Luxury <span>You Deserve</span></h1>
-      <p>Discover premium fashion crafted with elegance and quality.</p>
+      <p>Discover premium fashion crafted with elegance, confidence, and timeless quality.</p>
 
       <div class="hero-buttons">
-        <a href="shop.html" class="btn-primary">Shop Now</a>
-        <a href="collections.html" class="btn-secondary">View Collections</a>
+        <a href="shop.html" class="btn-primary">
+          <i class="fas fa-shopping-bag"></i> Shop Now
+        </a>
+        <a href="collections.html" class="btn-secondary">
+          View Collections
+        </a>
       </div>
     </div>
 
     <div class="hero-image">
-      <!-- ✅ FIXED -->
-      <img src="images/categories/gg.jpg" alt="Velour Empire">
+      <img src="images/categories/gg.jpg" alt="Velour Empire Fashion">
     </div>
+
   </div>
 </section>
 
 <!-- CATEGORY SECTION -->
-<section class="category-section">
+<section class="category-section fade-in">
   <div class="section-title">
-    <h2>Shop by Category</h2>
+    <h2>Shop by <span>Category</span></h2>
+    <p>Carefully curated collections for every style</p>
   </div>
 
   <div class="category-grid">
 
     <div class="category-card">
-      <!-- ✅ FIXED -->
       <img src="images/categories/shirts.jpg" alt="Shirts">
       <div class="category-overlay">
         <h3>Shirts</h3>
@@ -52,7 +74,6 @@
     </div>
 
     <div class="category-card">
-      <!-- ✅ FIXED -->
       <img src="images/categories/jackets.jpg" alt="Jackets">
       <div class="category-overlay">
         <h3>Jackets</h3>
@@ -61,7 +82,6 @@
     </div>
 
     <div class="category-card">
-      <!-- ✅ FIXED -->
       <img src="images/categories/hoodies.jpg" alt="Hoodies">
       <div class="category-overlay">
         <h3>Hoodies</h3>
@@ -72,6 +92,28 @@
   </div>
 </section>
 
+<script>
+window.addEventListener("scroll", () => {
+    const nav = document.querySelector(".navbar");
+    if (!nav) return;
+
+    nav.classList.toggle("scrolled", window.scrollY > 20);
+});
+</script>
+<script>
+const footer = document.querySelector(".footer");
+
+if (footer) {
+    const observer = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+            footer.classList.add("show");
+        }
+    }, { threshold: 0.2 });
+
+    observer.observe(footer);
+}
+</script>
+<script src="js/main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
-
