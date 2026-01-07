@@ -1,29 +1,27 @@
- // 🌙 Dark Mode Toggle
-const toggleBtn = document.getElementById("themeToggle");
+ // Navbar shadow on scroll
+window.addEventListener("scroll", () => {
+    const nav = document.querySelector(".navbar");
+    if (!nav) return;
 
-if (toggleBtn) {
-  toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-
-    // Change icon
-    toggleBtn.textContent =
-      document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
-
-    // Save preference
-    localStorage.setItem(
-      "theme",
-      document.body.classList.contains("dark-mode") ? "dark" : "light"
-    );
-  });
-}
-
-// Load saved theme
-window.addEventListener("DOMContentLoaded", () => {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark-mode");
-    if (toggleBtn) toggleBtn.textContent = "☀️";
-  }
+    nav.classList.toggle("scrolled", window.scrollY > 20);
 });
 
+const toggleBtn = document.getElementById("themeToggle");
 
+// Load saved theme
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+    toggleBtn.textContent = "☀️";
+}
+
+toggleBtn?.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+        toggleBtn.textContent = "☀️";
+    } else {
+        localStorage.setItem("theme", "light");
+        toggleBtn.textContent = "🌙";
+    }
+});
